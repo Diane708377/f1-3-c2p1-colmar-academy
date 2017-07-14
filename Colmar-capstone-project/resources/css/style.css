@@ -1,0 +1,1096 @@
+/* Hello,
+my name is Diane.
+I put some comments to explain my choices.
+Thank you for your advice.
+Note: I am not an English native speaker, so my English syntax
+might be weird sometimes. Sorry. */
+
+/* font queries: */
+
+/* This Amaranth font is a sans serif font,
+it is chosen for the main parts of the website. */
+@font-face {
+  font-family: "Amaranth";
+  src: url("../assets/fonts/Amaranth-Regular.otf") format('opentype'),
+       url("../assets/fonts/Amaranth-Italic.otf") format('opentype'),
+       url("../assets/fonts/Amaranth-Bold.otf") format('opentype'),
+       url("../assets/fonts/Amaranth-BoldItalic.otf") format('opentype');
+}
+/* This Luxi Mono font is a monospace font,
+it is chosen for the interactive parts of the website
+(links, button, ...) */
+@font-face {
+  font-family: "Luxi Mono";
+  src: url("../assets/fonts/Luximr.ttf") format('truetype'),
+       url("../assets/fonts/Luximri.ttf") format('truetype'),
+       url("../assets/fonts/Luximb.ttf") format('truetype'),
+       url("../assets/fonts/Luximbi.ttf") format('truetype');
+}
+/* This cantarell font was chosen for its readability.
+It is displayed on the mobile version of the website */
+@font-face {
+  font-family: "Cantarell";
+  src: url("../assets/fonts/Cantarell-Regular.ttf") format('truetype'),
+       url("../assets/fonts/Cantarell-Oblique.ttf") format('truetype'),
+       url("../assets/fonts/Cantarell-Bold.ttf") format('truetype'),
+       url("../assets/fonts/Cantarell-BoldOblique.ttf") format('truetype');
+}
+
+/* ======================================================================================== */
+
+/* universal and shared styles: */
+
+/* This setting of the root element is used
+to determine the value of one rem,
+and therefore it is the base used to compute
+all the relative measurements values
+of this website */
+html {
+  font-size: 16px;
+}
+
+/* font and text settings */
+
+h1, h2, h4, p {
+  font-family: "Amaranth", "Lucida Sans", sans-serif;
+}
+
+h3, h5, h6, a, button {
+  font-family: "Luxi Mono", "Liberation Mono", monospace;
+}
+
+h1, h2, h3, h4, h5, h6, a, button, .signUp-text, .quote-author {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo-heading,.information-motto, .video-heading, .video-quote {
+  font-style: italic;
+}
+
+/* The font size is set in descendant order from
+most important elements to less important ones */
+
+h1 {
+  font-size: 3.75rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+h5, p {
+  font-size: 1.4rem;
+}
+
+h6,.footer-nav a {
+  font-size: 1.2rem;
+}
+
+.header-nav a, button {
+  font-size: 1.5rem;
+}
+
+.news-text, .news-link {
+  font-size: 1.3rem;
+}
+
+/* line height settings */
+
+h1, h2 {
+  line-height: 4rem;
+}
+
+h3 {
+  line-height: 3rem;
+}
+
+h4, h5, h6, blockquote, .signUp-text {
+  line-height: 2rem;
+}
+
+p, a {
+  line-height: 1.6rem;
+}
+
+/* color settings */
+
+/* Thinking about color blindness issues,
+I made the choice to emphasize on contrast.
+The colors are inspired from the banner,
+campus images, and from the golden light
+reflected by the building in the video.
+Therefore there are three main complementary
+colors (light green, burly wood, golden yellow).
+Each of these main colors is then decomposed in other
+colors based on a monochrome palette.
+
+A color logic is also applied:
+the website shape is burlywood,
+the fixed header contains the three main colors
+because it has to be in harmony with all the website sections,
+the jumbotron section which deals with starting learning
+and the learning topics section have the same
+background colors,
+the information section and the thesis section which deal
+with quotes and academy news have the same color pattern.*/
+
+/* all notations: color-name: Burlywood, hex: #DEB887, rgb(222, 184, 135), hsl(33.8, 56.9%, 70%) */
+body {
+  background-color: burlywood;
+}
+/* all notations: color-name: Gold, hex: #FFD700 , rgb(255, 215, 0), hsl(50.6, 100%, 50%) */
+.siteContent, header, .topic-course {
+  background-color: gold;
+}
+/* all notations: color-name: Light green, hex: #90EE90, rgb(144, 238, 144), hsl(120, 73.4%, 74.9%) */
+main, .news-heading, footer {
+  background-color: lightgreen;
+}
+/* all notations: color-name: Burlywood, hex: #DEB887, rgb(222, 184, 135), hsl(33.8, 56.9%, 70%) */
+header {
+  border-bottom: 0.5rem solid burlywood;
+}
+/* all notations: color-name: Light yellow, hex: #FFFFED, rgb(255, 255, 237), hsl(60, 100%, 96.5%)  */
+.header-logo img, .header-logo h3, .header-nav ul li a {
+  background-color: lightyellow;
+}
+/* all notations: color-name: Maroon, hex: #800000, rgb(128, 0, 0), hsl(0, 100%, 25.1%) */
+/* all notations: color-name: Light green, hex: #90EE90, rgb(144, 238, 144), hsl(120, 73.4%, 74.9%) */
+.header-logo img {
+  border-top: 0.5rem solid maroon;
+  border-bottom: 0.5rem solid lightgreen;
+}
+/* all notations: color-name: Goldenrod , hex: #DAA520 , rgb(218, 165, 32), hsl(42.9, 74.4%, 49%) */
+.header-logo h3  {
+  color: goldenrod;
+}
+/* all notations: color-name: Chocolate, hex: #D2691E, rgb(210, 105, 30), hsl(25, 75%, 47.1%) */
+/* all notations: color-name: Light green, hex: #90EE90, rgb(144, 238, 144), hsl(120, 73.4%, 74.9%) */
+.header-logo h3 {
+  border-top: 0.3rem solid chocolate;
+  border-bottom: 0.3rem solid lightgreen;
+}
+/* all notations: color-name: Maroon, hex: #800000, rgb(128, 0, 0), hsl(0, 100%, 25.1%) */
+.logo-heading strong, .header-nav ul li a, .news-link a, .signUp-btn {
+  color: maroon;
+}
+/* all notations: color-name: Chocolate, hex: #D2691E, rgb(210, 105, 30), hsl(25, 75%, 47.1%) */
+/* all notations: color-name: Light green, hex: #90EE90, rgb(144, 238, 144), hsl(120, 73.4%, 74.9%) */
+.header-nav ul li a {
+  border-top: 0.2em solid chocolate;
+  border-bottom: 0.2em solid lightgreen;
+}
+/* all notations: color-name: Pale goldenrod, hex: #EEE8AA, rgb(238, 232, 170), hsl(54.7, 66.7%, 80%) */
+.jumbotron, .learning {
+  background-color: palegoldenrod;
+}
+/* all notations: color-name: Burlywood, hex: #DEB887, rgb(222, 184, 135), hsl(33.8, 56.9%, 70%) */
+.jumbotron {
+  border-top: 1rem solid burlywood;
+}
+/* all notations: color-name: Gold, hex: #FFD700 , rgb(255, 215, 0), hsl(50.6, 100%, 50%) */
+.jumbotron-banner {
+  border-left: 1.5rem solid gold;
+}
+/* all notations: color-name: Light goldenrod yellow, hex: #FAFAD2, rgb(250, 250, 210), hsl(60, 80%, 90.2%) */
+h1, .signUp-btn, .news-text, .news-link a, .learning-topics, .footer-nav ul li a  {
+  background-color: lightgoldenrodyellow;
+}
+/* all notations: color-name: Gold, hex: #FFD700 , rgb(255, 215, 0), hsl(50.6, 100%, 50%) */
+h1 {
+  border-left: 2rem solid gold;
+}
+/* all notations: color-name: Gold, hex: #FFD700 , rgb(255, 215, 0), hsl(50.6, 100%, 50%) */
+/* all notations: color-name: Brown, hex: #A52A2A, rgb(165, 42, 42), hsl(0, 59.4%, 40.6%) */
+.signUp-btn {
+  border-top: 1rem solid gold;
+  border-bottom: 1rem solid brown;
+  border-left: 1rem solid brown;
+  border-right: 1rem solid gold;
+}
+/* all notations: color-name: Khaki, hex: #C3B091, rgb(195, 176, 145), hsl(37.2, 29.4%, 66.7%) */
+.information, .thesis {
+  background-color: khaki;
+}
+/* all notations: color-name: Light green, hex: #90EE90, rgb(144, 238, 144), hsl(120, 73.4%, 74.9%) */
+.information-motto, .thesis-heading span, .content-video {
+  border-left: 1.5rem solid lightgreen;
+}
+/* all notations: color-name: Light green, hex: #90EE90, rgb(144, 238, 144), hsl(120, 73.4%, 74.9%) */
+.tile-image {
+  border-left: 1rem solid lightgreen;
+}
+/* all notations: color-name: Dark green, hex: #013220, rgb(1, 50, 32), hsl(158, 96.1%, 10%) */
+.news-heading {
+  border-top: 0.3rem solid darkgreen;
+}
+/* all notations: color-name: Goldenrod , hex: #DAA520 , rgb(218, 165, 32), hsl(42.9, 74.4%, 49%) */
+.news-text {
+  border-bottom: 0.3rem solid goldenrod;
+}
+/* all notations: color-name: Light green, hex: #90EE90, rgb(144, 238, 144), hsl(120, 73.4%, 74.9%) */
+/* all notations: color-name: Goldenrod , hex: #DAA520 , rgb(218, 165, 32), hsl(42.9, 74.4%, 49%) */
+.news-link a {
+  border-bottom: 0.3rem solid lightgreen;
+  border-top: 0.2rem solid goldenrod;
+}
+/* all notations: color-name: Goldenrod , hex: #DAA520 , rgb(218, 165, 32), hsl(42.9, 74.4%, 49%) */
+.learning-topics, .topic-course {
+  border: 0.1rem solid goldenrod;
+}
+/* all notations: color-name: Gold, hex: #FFD700 , rgb(255, 215, 0), hsl(50.6, 100%, 50%) */
+.learning span {
+  border-left: 1.5rem solid gold;
+}
+/* all notations: color-name: Yellow, hex: #FFFF00, rgb(255, 255, 0), hsl(60, 100%, 50%) */
+.course-heading {
+  border-top: 1rem solid yellow;
+}
+/* all notations: color-name: Chocolate, hex: #D2691E, rgb(210, 105, 30), hsl(25, 75%, 47.1%) */
+/* all notations: color-name: Goldenrod , hex: #DAA520 , rgb(218, 165, 32), hsl(42.9, 74.4%, 49%) */
+/* all notations: color-name: Dark green, hex: #013220, rgb(1, 50, 32), hsl(158, 96.1%, 10%) */
+.footer-nav ul li a {
+  border-bottom: 0.2rem solid chocolate;
+  border-top: 0.2rem solid goldenrod;
+  color: darkgreen;
+}
+
+/* display and sizing settings */
+
+.siteContent {
+  height: 100vh;
+  width: 96vw;
+  margin: auto;
+}
+
+.logo-heading-mobile, .header-icon-mobile, .jumbotron-top-mobile, .angle-mobile {
+  display: none;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 4rem;
+  padding: 0.5rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.header-logo h3, .news-link a {
+  border-radius: 15%;
+}
+
+.header-nav ul li a, .signUp-btn, .footer-nav ul li a {
+  border-radius: 25%;
+}
+
+.jumbotron-banner, .information-motto, .content-video {
+  width: 60%;
+}
+
+.main-section h2, .header-logo h3 {
+  text-align: center;
+}
+
+.learning h2, .thesis h2 {
+  padding: 2rem;
+}
+
+h2 span, blockquote {
+  padding-left: 0.75rem;
+}
+
+blockquote {
+  text-align: justify;
+}
+
+.quote-heading, .quote-author, .video-heading {
+  margin-left: 0.75rem;
+}
+
+.campus-tile, .exhibit-tile {
+  height: 10.5rem;
+  width: 26.4375rem;
+}
+
+.tile-image {
+  margin: 1rem;
+  max-width: 35%;
+}
+
+.tile-news {
+  max-width: 55%;
+}
+
+/* flexbox settings */
+
+header, .header-logo, .jumbotron, .information, .campus-tile,
+.learning-topics, .thesis-content, .exhibit-tile, footer {
+  /* These vendor prefix properties are here to solve some compatibility problems
+  with some browser versions when using flexbox: */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  /*---------------------------------------------------------------------------*/
+  display: flex;
+
+  align-content: center;
+}
+
+header, .header-logo, .campus-tile, .learning-topics, .exhibit-tile, footer {
+  /* These vendor prefix properties are here to solve some compatibility problems
+  with some browser versions when using flexbox: */
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  /*---------------------------------------------------------------------------*/
+  align-items: center;
+}
+
+header, .header-logo, footer, .campus-tile, .exhibit-tile {
+  /* These vendor prefix properties are here to solve some compatibility problems
+  with some browser versions when using flexbox: */
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  /*----------------------------------------------------------------------------*/
+  justify-content: space-between;
+}
+
+.learning-topics {
+  flex-wrap: wrap;
+}
+
+/* pseudo class and transition settings */
+
+/* all notations: color-name: Light green, hex: #90EE90, rgb(144, 238, 144), hsl(120, 73.4%, 74.9%) */
+/* all notations: color-name: Dark goldenrod, hex: #B8860B, rgb(184, 134, 11), hsl(42.7, 88.7%, 38.2%) */
+/* all notations: color-name: Light yellow, hex: #FFFFED, rgb(255, 255, 237), hsl(60, 100%, 96.5%)  */
+.header-nav ul li a:hover {
+  background-color: lightgreen;
+  border-bottom: 0.2em solid darkgoldenrod;
+  color: lightyellow;
+}
+/* all notations: color-name: Maroon, hex: #800000, rgb(128, 0, 0), hsl(0, 100%, 25.1%) */
+/* all notations: color-name: Yellow, hex: #FFFF00, rgb(255, 255, 0), hsl(60, 100%, 50%) */
+.header-nav ul li a:visited {
+  background-color: maroon;
+  color: yellow;
+}
+/* all notations: color-name: Light green, hex: #90EE90, rgb(144, 238, 144), hsl(120, 73.4%, 74.9%) */
+/* all notations: color-name: Chocolate, hex: #D2691E, rgb(210, 105, 30), hsl(25, 75%, 47.1%) */
+/* all notations: color-name: Light yellow, hex: #FFFFED, rgb(255, 255, 237), hsl(60, 100%, 96.5%)  */
+.signUp-btn:hover {
+  background-color: lightgreen;
+  border: 1rem solid chocolate;
+  color: lightyellow;
+}
+/* all notations: color-name: Maroon, hex: #800000, rgb(128, 0, 0), hsl(0, 100%, 25.1%) */
+/* all notations: color-name: Gold, hex: #FFD700 , rgb(255, 215, 0), hsl(50.6, 100%, 50%) */
+/* all notations: color-name: Yellow, hex: #FFFF00, rgb(255, 255, 0), hsl(60, 100%, 50%) */
+.signUp-btn:active {
+  background-color: maroon;
+  border: 1rem solid gold;
+  color: yellow;
+}
+/* all notations: color-name: Dark green, hex: #013220, rgb(1, 50, 32), hsl(158, 96.1%, 10%) */
+/* all notations: color-name: Light yellow, hex: #FFFFED, rgb(255, 255, 237), hsl(60, 100%, 96.5%) */
+.news-link a:hover {
+  background-color: darkgreen;
+  color: lightyellow;
+}
+/* all notations: color-name: Maroon, hex: #800000, rgb(128, 0, 0), hsl(0, 100%, 25.1%) */
+/* all notations: color-name: Khaki, hex: #C3B091, rgb(195, 176, 145), hsl(37.2, 29.4%, 66.7%) */
+.news-link a:visited {
+  background-color: maroon;
+  color: khaki;
+}
+
+.topic-course {
+  opacity: 0.8;
+  transition: opacity 1.5s ease-out 0s;
+}
+
+.topic-course:hover {
+  opacity: 1;
+}
+/* all notations: color-name: Goldenrod , hex: #DAA520 , rgb(218, 165, 32), hsl(42.9, 74.4%, 49%) */
+.learning-topics .topic-course:nth-child(2n+1) {
+  border-bottom: 0.3rem solid goldenrod;
+}
+/* all notations: color-name: Khaki, hex: #C3B091, rgb(195, 176, 145), hsl(37.2, 29.4%, 66.7%) */
+.learning-topics .topic-course:nth-child(2n+2) {
+  border-bottom: 0.5rem solid khaki;
+}
+/* all notations: color-name: Dark green, hex: #013220, rgb(1, 50, 32), hsl(158, 96.1%, 10%) */
+/* all notations: color-name: Khaki, hex: #C3B091, rgb(195, 176, 145), hsl(37.2, 29.4%, 66.7%) */
+.footer-nav ul li a:hover {
+  background-color: darkgreen;
+  color: khaki;
+}
+/* all notations: color-name: Maroon, hex: #800000, rgb(128, 0, 0), hsl(0, 100%, 25.1%) */
+/* all notations: color-name: Yellow, hex: #FFFF00, rgb(255, 255, 0), hsl(60, 100%, 50%) */
+.footer-nav ul li a:visited {
+  background-color: maroon;
+  color: yellow;
+}
+
+/* =========================================================================== */
+
+/* header styles: */
+
+header {
+  height: 4rem;
+  padding-left: 1.5rem;
+  position: fixed;
+  right: 0.4rem;
+  width: 96.8%;
+  z-index: 100;
+}
+
+.header-logo h3 {
+  margin-left: 0.5rem;
+  padding: 0.1rem 1rem;
+  font-weight: 200;
+}
+
+.logo-heading strong {
+  font-weight: 900;
+}
+
+.header-nav {
+  padding-right: 1.5rem;
+}
+
+.header-nav ul li a {
+  padding: 0.3rem;
+}
+
+/* jumbotron section styles: */
+
+.jumbotron {
+  padding-top: 4rem;
+}
+
+.jumbotron-banner, .jumbotron-signUp {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Asset management:
+The 'min' at the end of the image name indicates
+that the picture has a lower resolution than the original */
+.jumbotron-banner {
+  background-image: url("../assets/images/banner_min.jpg");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 1.5rem;
+}
+
+.jumbotron-signUp {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  padding-left: 2.5rem;
+  width: 35%;
+}
+
+.signUp-heading {
+  padding-left: 1rem;
+  max-width: 85%;
+}
+
+.signUp-text {
+  padding: 4rem 0;
+  margin-bottom: 2rem;
+}
+
+.signUp-btn {
+  font-size: 2rem;
+  font-weight: bolder;
+  line-height: 3rem;
+  padding: 0.5rem 0;
+}
+
+.signUp-heading, .signUp-text, .signUp-btn {
+  width: 90%;
+}
+
+/* information section styles */
+
+.information-motto {
+  margin: 2rem 1.5rem;
+}
+
+.motto-quote h2 {
+  text-align: left;
+  padding-top: 2rem;
+}
+
+.motto-quote p {
+  padding: 1.5rem 0;
+}
+
+.information-campus {
+  margin-top: 1rem;
+}
+
+.news-text {
+  margin: 0.5rem auto;
+}
+
+.news-link a {
+  font-size: 1.2rem;
+}
+
+/* learning section styles */
+
+.learning {
+  padding-bottom: 1rem;
+}
+
+.learning-topics {
+  margin: auto;
+  width: 72rem;
+}
+
+.topic-course {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  padding-bottom: 1.5rem;
+  height: 23rem;
+  width: 21.75rem;
+}
+
+.course-image {
+  min-height: 30%;
+}
+
+.course-heading, .course-subheading, .course-description {
+  padding-left: 1rem;
+}
+
+.course-heading {
+  padding-top: 1rem;
+}
+
+.course-subheading {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.course-description {
+  position: sticky;
+  top: 13.75rem;
+}
+
+/* thesis section styles */
+
+.thesis {
+  padding-bottom: 2rem;
+}
+
+.thesis-content {
+  margin-left: 1.5rem;
+}
+
+.video-heading {
+  padding: 1.5rem 0;
+}
+
+/* footer styles: */
+
+footer {
+  padding: 0rem 1.5rem;
+}
+
+.footer-nav ul li a {
+  padding: 0.2rem;
+}
+
+/* ========================================================================== */
+
+/* media query styles : */
+
+/* media query for the laptop breaking point */
+
+@media only screen and (max-width: 1200px) {
+ html {
+   font-size: 14px;
+ }
+
+ .header-nav a {
+   font-size: 1.4rem;
+ }
+
+ h3 {
+   font-size: 2.2rem;
+ }
+
+ .learning-topics {
+   margin: auto;
+   width: 60rem;
+ }
+
+ .topic-course {
+   margin-right: 1rem;
+   margin-bottom: 1rem;
+   margin-left: 1rem;
+   padding-bottom: 1.5rem;
+   height: 23rem;
+   width: 17.75rem;
+ }
+}
+
+/* media query for the tablet breaking point: */
+
+@media only screen and (max-width: 1000px) {
+  html {
+    font-size: 24px;
+  }
+
+  header, .jumbotron-top-mobile, .jumbotron-signUp, .information-campus,
+  .campus-tile, .learning-topics, .content-video {
+    width: 100%;
+  }
+/* all notations: color-name: Khaki, hex: #C3B091, rgb(195, 176, 145), hsl(37.2, 29.4%, 66.7%) */
+/* all notations: color-name: Burlywood, hex: #DEB887, rgb(222, 184, 135), hsl(33.8, 56.9%, 70%) */
+  header {
+    /* These vendor prefix properties are here to solve some compatibility problems
+ with some browser versions when using flexbox: */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+ /*------------------------------------------------------------------------------*/
+     display: flex;
+
+     /* These vendor prefix properties are here to solve some compatibility problems
+  with some browser versions when using flexbox: */
+     -webkit-box-pack: justify;
+     -ms-flex-pack: justify;
+  /*-------------------------------------------------------------------------------*/
+     justify-content: space-around;
+
+     background-color: khaki;
+     border-bottom: 1.25rem solid burlywood;
+     left: 0.1rem;
+   }
+
+  .logo-heading, .header-nav, .jumbotron-banner, .information-motto,
+  .image-desktop, .course-image, .course-subheading, .video-heading,
+  .video-quote, .content-exhibit, .footer-nav {
+    display: none;
+  }
+
+  .header-logo {
+    width: 5rem;
+  }
+/* all notations: color-name: Gold, hex: #FFD700 , rgb(255, 215, 0), hsl(50.6, 100%, 50%) */
+/* all notations: color-name: Chocolate, hex: #D2691E, rgb(210, 105, 30), hsl(25, 75%, 47.1%) */
+  .header-logo img, .logo-heading-mobile {
+    background-color: gold;
+    border-left: 0.3rem solid chocolate;
+    border-bottom-width: 0.1rem;
+  }
+
+  .header-logo img, .logo-heading-mobile, .thesis-content {
+    margin: 0;
+  }
+
+  .header-logo img {
+    border-radius: 60%;
+    min-height: 1.25rem;
+    min-width: 1.75rem;
+    opacity: 0.8;
+    padding: 0.6rem;
+  }
+
+  .signUp-btn, .news-link a {
+    border-radius: 15%;
+  }
+
+  .logo-heading-mobile, .jumbotron-top-mobile, .angle-mobile {
+    display: block;
+  }
+
+  .logo-heading-mobile, .course-description {
+    opacity: 0;
+  }
+
+/* Using of pseudo-class with the opacity property.
+It gives the possibility to see the logo owner name. */
+  .logo-heading-mobile:hover {
+    opacity: 1;
+  }
+
+  .logo-heading-mobile, .jumbotron-top-mobile h3 {
+    position: relative;
+  }
+
+  .logo-heading-mobile, .jumbotron-top-mobile h3 {
+    text-align: center;
+  }
+/* all notations: color-name: Light green, hex: #90EE90, rgb(144, 238, 144), hsl(120, 73.4%, 74.9%) */
+/* all notations: color-name: Maroon, hex: #800000, rgb(128, 0, 0), hsl(0, 100%, 25.1%) */
+  .logo-heading-mobile {
+    border-radius: 40%;
+    border-right: 0.3rem solid lightgreen;
+    color: maroon;
+    font-size: 0.75rem;
+    font-family: "Cantarell", "Arial", serif;
+    font-weight: bold;
+    height: 3.75rem;
+    right: 3.15rem;
+    width: 5.75rem;
+  }
+
+  .header-icon-mobile, .header-icon-mobile i {
+    width: 3rem;
+  }
+
+  .header-icon-mobile {
+    display: inline-block;
+    line-height: 4rem;
+    margin-right: 3rem;
+  }
+/* all notations: color-name: Gold, hex: #FFD700 , rgb(255, 215, 0), hsl(50.6, 100%, 50%) */
+/* all notations: color-name: Dark goldenrod, hex: #B8860B, rgb(184, 134, 11), hsl(42.7, 88.7%, 38.2%) */
+  .header-icon-mobile i {
+    background-color: gold;
+    border-left: 0.4rem solid darkgoldenrod;
+    border-radius: 30%;
+    height: 1.25rem;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.75rem;
+  }
+/* all notations: color-name: Light green, hex: #90EE90, rgb(144, 238, 144), hsl(120, 73.4%, 74.9%) */
+/* all notations: color-name: Maroon, hex: #800000, rgb(128, 0, 0), hsl(0, 100%, 25.1%) */
+  .header-icon-mobile i:hover {
+     background-color: lightgreen;
+     color: maroon;
+  }
+/* all notations: color-name: Brown, hex: #A52A2A, rgb(165, 42, 42), hsl(0, 59.4%, 40.6%) */
+/* all notations: color-name: Light green, hex: #90EE90, rgb(144, 238, 144), hsl(120, 73.4%, 74.9%) */
+  .header-icon-mobile i:active {
+    background-color: brown;
+    color: lightgreen;
+  }
+/* all notations: color-name: Black, hex: #000000, rgb(0, 0, 0) , hsl(0, 0%, 0%) */
+  .header-icon-mobile a {
+    color: black;
+  }
+/* all notations: color-name: Chocolate, hex: #D2691E, rgb(210, 105, 30), hsl(25, 75%, 47.1%) */
+  .header-icon-mobile a:visited {
+    color: chocolate;
+  }
+
+  .jumbotron, .campus-tile, .learning-topics {
+    /* These vendor prefix properties are here to solve some compatibility problems
+  with some browser versions when using flexbox: */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+  /*------------------------------------------------------------------------------*/
+    flex-direction: column;
+  }
+/* all notations: color-name: Burlywood, hex: #DEB887, rgb(222, 184, 135), hsl(33.8, 56.9%, 70%) */
+  .jumbotron {
+    border-top: 5rem solid burlywood;
+    padding-top: 0;
+  }
+/* all notations: color-name: Light green, hex: #90EE90, rgb(144, 238, 144), hsl(120, 73.4%, 74.9%) */
+/* all notations: color-name: Maroon, hex: #800000, rgb(128, 0, 0), hsl(0, 100%, 25.1%) */
+  .jumbotron-top-mobile {
+    background-color: lightgreen;
+    border-bottom: 0.5rem solid maroon;
+    border-top: 1rem solid maroon;
+    height: 11.25rem;
+  }
+
+  .jumbotron-top-mobile i {
+    z-index: 150;
+  }
+
+/* This animation displays a hidden welcome message to the user,
+it tells the name of the academy */
+
+/* all notations: color-name: Dark goldenrod, hex: #B8860B, rgb(184, 134, 11), hsl(42.7, 88.7%, 38.2%) */
+  .jumbotron-top-mobile h3 {
+    bottom: 6.75rem;
+    color: darkgoldenrod;
+    line-height: 2rem;
+    transition: bottom 1.5s linear 0s;
+  }
+
+  .jumbotron-top-mobile h3:hover {
+    bottom: 0rem;
+  }
+/* all notations: color-name: Burlywood, hex: #DEB887, rgb(222, 184, 135), hsl(33.8, 56.9%, 70%) */
+  .jumbotron-signUp {
+    border-top: 0.5rem solid burlywood;
+    margin-top: 0;
+  }
+
+  .signUp-heading {
+    font-size: 2.5rem;
+    max-width: 75%;
+  }
+
+  .jumbotron-signUp {
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-top: 2rem;
+  }
+
+  .signUp-text {
+    font-size: 1.8rem;
+    padding-bottom: 1.5rem;
+    padding-top: 2rem;
+  }
+
+  .signUp-btn {
+    border-width: 0.5rem;
+    font-size: 2rem;
+    height: 8rem;
+    width: 8rem;
+  }
+
+  .information-campus {
+    padding-bottom: 1rem;
+  }
+
+  .campus-tile, .tile-image {
+    padding: 0;
+  }
+
+  .campus-tile {
+    /* These vendor prefix properties are here to solve some compatibility problems
+    with some browser versions when using flexbox: */
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    /*---------------------------------------------------------------------------*/
+    align-items: center;
+
+    height: 28rem;
+    margin: 1rem;
+  }
+
+  .tile-image {
+    max-height: 50%;
+    max-width: 90%;
+  }
+
+  /* Asset management:
+  The 'min' at the end of the image name indicates
+  that each picture has a lower resolution than the original */
+  .image-mobile-one {
+    background-image: url("../assets/images/information-orientation-mobile_min.jpg");
+  }
+
+  .image-mobile-two {
+    background-image: url("../assets/images/information-campus-mobile_min.jpg");
+  }
+
+  .image-mobile-three {
+    background-image: url("../assets/images/information-guest-lecture-mobile_min.jpg");
+    padding-bottom: 12rem;
+  }
+/* all notations: color-name: Goldenrod , hex: #DAA520 , rgb(218, 165, 32), hsl(42.9, 74.4%, 49%) */
+  .image-mobile-one, .image-mobile-two, .image-mobile-three {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    border-top: 1rem solid goldenrod;
+    width: 90%;
+  }
+
+  .tile-news {
+    max-height: 50%;
+    max-width: 90%;
+  }
+
+  .information, .signUp-btn, .tile-news, .news-heading, .news-text, .news-link {
+    margin: 0;
+    padding: 0;
+  }
+
+  .news-text {
+    font-size: 1.6rem;
+    font-weight: 200;
+    margin-bottom: 0.75rem;
+  }
+
+  .news-link a {
+    border-radius: 40%;
+    padding: 0.4rem;
+  }
+
+  .learning-heading, .thesis-heading {
+    padding: 2rem 0;
+  }
+/* all notations: color-name: Gold, hex: #FFD700 , rgb(255, 215, 0), hsl(50.6, 100%, 50%) */
+  .learning-heading {
+    border-top: 1rem solid gold;
+    font-size: 2.3rem;
+}
+
+  .learning-heading span {
+    border-left: 0rem;
+  }
+
+  .image-mobile-one, .image-mobile-two, .image-mobile-three,
+  .learning-topics, .topic-course {
+    height: 100%;
+  }
+
+  .learning-topics {
+    padding-bottom: 2rem;
+  }
+
+  .topic-course, .course-description {
+    width: 90%;
+  }
+
+  .topic-course {
+    margin: 0.5rem;
+  }
+
+  .course-heading {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+  }
+
+  .angle-mobile {
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+
+/* This animation on the opacity property
+gives the possibility to the user to
+see the lesson subjects */
+/* all notations: color-name: Goldenrod , hex: #DAA520 , rgb(218, 165, 32), hsl(42.9, 74.4%, 49%) */
+  .course-description {
+    border-top: 0.2rem solid goldenrod;
+    font-size: 1.5rem;
+    margin-top: 0.2rem;
+    transition: opacity 1.5s linear 0.5s;
+  }
+
+  .course-description:hover {
+    opacity: 1;
+  }
+/* all notations: color-name: Light green, hex: #90EE90, rgb(144, 238, 144), hsl(120, 73.4%, 74.9%) */
+  .thesis-heading {
+    border-left: 1rem solid lightgreen;
+    border-right: 1rem solid lightgreen;
+    font-size: 2.3rem;
+  }
+
+  .thesis-heading span, .content-video {
+    border-left: 0rem;
+  }
+/* all notations: color-name: Goldenrod , hex: #DAA520 , rgb(218, 165, 32), hsl(42.9, 74.4%, 49%) */
+  .content-video {
+    border-top: 1rem solid goldenrod;
+  }
+
+  .footer-copyright {
+    margin-top: 1.5rem;
+  }
+
+  .copyright-heading {
+    font-size: 1rem;
+    line-height: 1.2;
+    padding: 1rem 0;
+    text-align: justify;
+  }
+}
+
+/* media query for the mobile breaking point: */
+
+@media only screen and (max-width: 650px) {
+  html {
+    font-size: 18px;
+  }
+
+  h1, h2, h4, p, h3, h5, h6, a, button {
+    font-family: "Cantarell", "Helvetica", sans-serif;
+  }
+
+  header {
+    /* These vendor prefix properties are here to solve some compatibility problems
+ with some browser versions when using flexbox: */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+ /*-----------------------------------------------------------------------------*/
+     display: flex;
+
+     /* These vendor prefix properties are here to solve some compatibility problems
+  with some browser versions when using flexbox: */
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+  /*------------------------------------------------------------------------------*/
+     justify-content: center;
+   }
+
+  .header-logo img {
+    margin: 0;
+    min-width: 1.75rem;
+    opacity: 0.8;
+    padding: 0.5rem;
+    position: relative;
+    left: 2rem;
+  }
+
+  .logo-heading-mobile {
+    right: 1.26rem;
+  }
+
+  .header-icon-mobile {
+    display: inline-block;
+    line-height: 4rem;
+    margin-left: 1.25rem;
+    margin-right: 1rem;
+    position: relative;
+    right: 0.5rem;
+    width: 1.75rem;
+  }
+
+  .header-icon-mobile:last-child {
+    margin-right: 5.5rem;
+  }
+
+  .header-icon-mobile i {
+    border-radius: 40%;
+    margin-right: 0.75rem;
+    padding: 0.75rem;
+    height: 1rem;
+    width: 1.75rem;
+  }
+
+  .jumbotron-top-mobile h3 {
+    line-height: 1.8rem;
+  }

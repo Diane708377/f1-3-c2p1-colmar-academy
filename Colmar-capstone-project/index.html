@@ -1,0 +1,518 @@
+<!-- Hello,
+my name is Diane.
+I put some comments to explain my choices.
+Thank you for your advice.
+Note: I am not an English native speaker, so my English syntax
+might be weird sometimes. Sorry. -->
+
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <title>Colmar Academy</title>
+    <!-- This is the link to the favicon file
+    that should be displayed in the browser tab by the title.
+    I put it in the root directory -->
+    <link rel="icon" type="image/x-icon" href="/colmar_academy_favicon.ico"/>
+
+    <!-- This is the link to the reset.css file.
+    I put it before the other stylesheets. -->
+    <link rel="stylesheet" type="text/css" href="./resources/css/reset.css"/>
+
+    <!--This is the link to the icon font awesome file.
+    I put the min version for faster loading -->
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css" />
+
+    <!-- This is my personal main stylesheet for the website -->
+    <link rel="stylesheet" type="text/css" href="./resources/css/style.css"/>
+
+  </head>
+
+  <body>
+
+    <div class="siteContent">
+    <!-- The site content is divided in three main parts:
+    a header, a main, and a footer.
+    For accessibility purpose, I use semantic html tags and
+    I put ARIA attributes. -->
+
+      <header class="siteContent-header">
+
+        <div class="header-logo">
+          <!-- The ARIA alt atribute gives a brief indication of the image nature -->
+          <!-- The logo svg file is converted into a logo png version for better quality
+          rendering on small resolution screens -->
+          <img src="./resources/assets/images/ic_logo_png_ver.png" alt="Logo">
+          <!-- The aria-label attribute gives the possibility to the screen reader
+          to read out loud its value content and gives indications for a better understanding -->
+          <h3 class="logo-heading" aria-label="Academy logo">
+            <strong>COLMAR</strong>ACADEMY
+          </h3>
+
+          <!-- This element will only be displayed with
+          the tablet/mobile version of the website -->
+          <p class="logo-heading-mobile" aria-label="Academy logo">
+            COLMAR<br/>LOGO
+          </p>
+
+        </div>
+
+        <nav class="header-nav">
+          <!-- The ARIA role attribute with a presentation value allows
+          the screen reader to go directly to the content of the list. -->
+          <ul class="nav-menu" role="presentation">
+            <li class="menu-item">
+              <a href="#on-campus">On campus</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">Online</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">For companies</a>
+            </li>
+            <li class="menu-item">
+              <a href="#log-in">Sign in</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- These elements will only be displayed with
+        the tablet/mobile version of the website -->
+        <div class="header-icon-mobile">
+          <a href="#on-campus" title="On campus">
+            <!-- Using of font-awesome for the menu icons.
+            The fa-lg class value increases the icon size
+            by 33 percent.
+            The fa-fw class value gives a better control
+            for customizing icon size. -->
+            <i class="fa fa-university fa-lg fa-fw"></i>
+            <!--Note: to better represent the campus idea,
+            I change the original icon
+            and I put the university/institution icon from font awesome -->
+          </a>
+        </div>
+        <div class="header-icon-mobile">
+          <a href="#online" title="Online">
+            <i class="fa fa-desktop fa-lg fa-fw"></i>
+          </a>
+        </div>
+        <div class="header-icon-mobile">
+          <a href="#log-in" title="Sign in">
+          <!-- The title attribute is set to give a hint
+          to the user about the icon meaning -->
+            <i class="fa fa-user fa-lg fa-fw"></i>
+          </a>
+        </div>
+
+      </header>
+
+      <main class="siteContent-main">
+      <!-- The main content is divided in four sections:
+      jumbotron, information, learning, thesis. -->
+
+      <section class="main-section jumbotron">
+      <!-- The jumbotron section is divided in two main parts:
+      The banner part and the sign up part. -->
+
+        <div class="jumbotron-banner" alt="Banner picture"></div>
+
+        <!-- These elements will only be displayed with
+        the tablet/mobile version of the website -->
+        <div class="jumbotron-top-mobile">
+          <!-- Add this sentence in the tablet/mobile version
+          to inform the user about the website owner -->
+          <h3>Welcome to Colmar Academy!<br/><br/>
+            <!-- Using of a font awesome icon to inform
+            the user that a hidden content can be displayed.
+            The fa-lg class value increases the icon size of 33 percent. -->
+            <i class="fa fa-chevron-down fa-2x"></i>
+          </h3>
+        </div>
+
+        <div class="jumbotron-signUp" id="log-in">
+          <h1 class="signUp-heading">
+            Learn something new everyday
+          </h1>
+          <p class="signUp-text">
+            Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit.
+          </p>
+          <button class="signUp-btn" aria-label="Sign up">
+            Start here
+          </button>
+        </div>
+
+      </section>
+
+      <section class="main-section information">
+      <!-- The information section has two main parts:
+      a motto blockquote part and a campus news part. -->
+
+        <div class="information-motto">
+
+          <div class="motto-image">
+            <img src="./resources/assets/images/information-main.jpg" alt="Information quote picture" />
+          </div>
+
+          <div class="motto-quote">
+            <h2 class="quote-heading">
+              It doesn't hurt to keep practicing
+            </h2>
+            <blockquote>
+              <p class="quote-text">
+                <!-- Using of the font awesome quote icons
+                to enhance the visibility of the blockquote content.-->
+                <i class="fa fa-quote-left"></i>
+                &nbsp;Curabitur vitae libero in ipsum porttitor consequat. Aliquam et
+                commodo lectus, nec consequat neque. Sed non accumsan urna. Phasellus
+                sed consequat ex. Etiam eget magna laoreet, efficitur dolor consequat,
+                tristique ligula.&nbsp;
+                <i class="fa fa-quote-right"></i>
+              </p>
+            </blockquote>
+            <p class="quote-author">
+              Emmanuel, Sr Strategist at Hiring.com
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Using of the ARIA role attribute with the complementary value.
+        It indicates that this part is complementary with the motto part. -->
+        <div class="information-campus" id="on-campus" role="complementary" aria-label="Campus news">
+
+          <div class="campus-tile">
+
+            <!-- the image-mobile-number class is used to target this div
+            for background-image purpose, when the tablet/mobile will be displayed -->
+            <div class="tile-image image-mobile-one">
+              <img class="image-desktop" src="./resources/assets/images/information-orientation.jpg" alt="Orientation picture" />
+            </div>
+
+            <div class="tile-news">
+              <h4 class="news-heading">
+                Orientation date
+              </h4>
+              <p class="news-text">
+                Tue 10/11 &amp; Wed 10/12: 8am-3pm
+              </p>
+              <p class="news-link">
+                <a href="#">Read more</a>
+              </p>
+            </div>
+
+          </div>
+
+          <div class="campus-tile">
+
+            <!-- the image-mobile-number class is used to target this div
+            for background-image purpose, when the tablet/mobile will be displayed -->
+            <div class="tile-image image-mobile-two">
+              <img class="image-desktop" src="./resources/assets/images/information-campus.jpg" alt="Campus picture" />
+            </div>
+
+            <div class="tile-news">
+              <h4 class="news-heading">
+                Our campus
+              </h4>
+              <p class="news-text">
+                Find which campus is close by you
+              </p>
+              <p class="news-link">
+                <a href="#">Read more</a>
+              </p>
+            </div>
+
+          </div>
+
+          <div class="campus-tile">
+
+            <!-- the image-mobile-number class is used to target this div
+            for background-image purpose, when the tablet/mobile will be displayed -->
+            <div class="tile-image image-mobile-three">
+              <img class="image-desktop" src="./resources/assets/images/information-guest-lecture.jpg" alt="Campus picture" />
+            </div>
+
+            <div class="tile-news">
+              <h4 class="news-heading">
+                Our guest lecture
+              </h4>
+              <p class="news-text">
+                Join a keynote with Oliver Sack
+                about music in medical treatment
+              </p>
+              <p class="news-link">
+                <a href="#">Read more</a>
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="main-section learning">
+      <!-- The learning section is divided in two parts:
+      A global heading and a learning topics presentation. -->
+
+        <h2 class="learning-heading">
+          <span>Start learning</span>
+        </h2>
+
+        <div class="learning-topics" aria-label="Topics">
+        <!-- learning topics presentation is divided in 6 parts.
+        And each topic course part follows the same pattern:
+        course image, Heading course, subheading, course description -->
+
+          <div class="topic-course">
+
+            <div class="course-image">
+              <img src="./resources/assets/images/course-software.jpg" alt="Software engineering picture" />
+            </div>
+
+            <h4 class="course-heading">
+              Software engineering
+            </h4>
+            <!-- Using of angle double down icons from font awesome.
+            It will indicate to the user that it can access to the
+            hidden content of the description course for each topic course.
+            These icons will only be used when the tablet/mobile website version
+            is activated. -->
+            <i class="fa fa-angle-double-down fa-lg angle-mobile"></i>
+            <h5 class="course-subheading">
+              COURSES
+            </h5>
+            <p class="course-description">
+              Web Development, Mobile Development,
+              iOT, APIs
+            </p>
+
+          </div>
+
+          <div class="topic-course">
+
+            <div class="course-image">
+              <img src="./resources/assets/images/course-computer-art.jpg" alt="Computer art course picture" />
+            </div>
+
+            <h4 class="course-heading">
+              Computer art
+            </h4>
+            <i class="fa fa-angle-double-down fa-lg angle-mobile"></i>
+            <h5 class="course-subheading">
+              COURSES
+            </h5>
+            <p class="course-description">
+              Imaging &amp; Design, Web Desing,
+              Motion Graphics &amp; Visual Effects,
+              Computer Animation
+            </p>
+
+          </div>
+
+          <div class="topic-course">
+
+            <div class="course-image">
+              <img src="./resources/assets/images/course-design.jpg" alt="Design course picture" />
+            </div>
+
+            <h4 class="course-heading">
+              Design
+            </h4>
+            <i class="fa fa-angle-double-down fa-lg angle-mobile"></i>
+            <h5 class="course-subheading">
+              COURSES
+            </h5>
+            <p class="course-description">
+              User Experience Design,
+              User Research, Visual Design
+            </p>
+
+          </div>
+
+          <div class="topic-course">
+
+            <div class="course-image">
+              <img src="./resources/assets/images/course-data.jpg" alt="Data course picture" />
+            </div>
+
+            <h4 class="course-heading">
+              Data
+            </h4>
+            <i class="fa fa-angle-double-down fa-lg angle-mobile"></i>
+            <h5 class="course-subheading">
+              COURSES
+            </h5>
+            <p class="course-description">
+              Data Science, Big Data, SQL,
+              Data Visualization
+            </p>
+
+          </div>
+
+          <div class="topic-course">
+
+            <div class="course-image">
+              <img src="./resources/assets/images/course-business.jpg" alt="Business course picture" />
+            </div>
+
+            <h4 class="course-heading">
+              Business
+            </h4>
+            <i class="fa fa-angle-double-down fa-lg angle-mobile"></i>
+            <h5 class="course-subheading">
+              COURSES
+            </h5>
+            <p class="course-description">
+              Product Development,
+              Business Development,
+              Startup
+            </p>
+
+          </div>
+
+          <div class="topic-course">
+
+            <div class="course-image">
+              <img src="./resources/assets/images/course-marketing.jpg" alt="Marketing course picture" />
+            </div>
+
+            <h4 class="course-heading">
+              Marketing
+            </h4>
+            <i class="fa fa-angle-double-down fa-lg angle-mobile"></i>
+            <h5 class="course-subheading">
+              COURSES
+            </h5>
+            <p class="course-description">
+              Analytics, Content Marketing,
+              Mobile Marketing
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="main-section thesis">
+      <!-- The thesis section is divided into two main parts:
+      A global heading and a thesis content presentation -->
+
+        <h2 class="thesis-heading">
+          <span>Thesis Exhibit</span>
+        </h2>
+
+        <div class="thesis-content" aria-label="About Building design">
+          <!-- The thesis content is divided in two main blocks:
+          A video content part and a thesis exhibit news part. -->
+
+          <div class="content-video" aria-label ="Building design video">
+            <!-- The video is set to be auto played within a loop,
+            in a muted state -->
+            <video src="./resources/assets/videos/thesis.mp4" autoplay controls loop muted width="100%">video not supported</video>
+            <h4 class="video-heading" aria-label="Video description">
+              Reimagine urban
+            </h4>
+            <blockquote>
+              <p class="video-quote">
+                <!-- Using of the font awesome quote icons
+                to enhance the visibility of the blockquote content.-->
+                <i class="fa fa-quote-left"></i>
+                &nbsp;Curatur vitae libero in ipsum
+                porttitor consequat. Aliquam et commodo lectus,
+                nec consequat neque. Sed non accumsan urna.
+                Phasellus sed consequat ex.
+                Etiam eget magna laoreet, efficitur consequat,
+                tristique ligula.&nbsp;
+                <i class="fa fa-quote-right"></i>
+              </p>
+            </blockquote>
+          </div>
+
+          <div class="content-exhibit" role="complementary" aria-label="Thesis exhibit news">
+          <!-- The thesis exhibit news is divided in two parts and the ARIA role
+           with the complementary value indicates that it is linked with the content video. -->
+
+            <div class="exhibit-tile">
+            <!-- each exhibit tile has the same pattern.
+            And this pattern is very similar to the campus-tile seen before in this code.
+            So I use the same class name when it is possible:
+            tile-image, tile-news, ... -->
+
+              <div class="tile-image">
+                <img src="./resources/assets/images/thesis-fisma.jpg" alt="Thesis Fisma picture" />
+              </div>
+
+              <div class="tile-news">
+                <h4 class="news-heading" arial-label="Thesis title">
+                  Fisma: Design and ...
+                </h4>
+                <p class="news-text" aria-label="Thesis subject">
+                  Designer showcase of new prototype product
+                </p>
+              </div>
+
+            </div>
+
+            <div class="exhibit-tile">
+
+              <div class="tile-image">
+                <img src="./resources/assets/images/thesis-now-and-then.jpg" alt="Thesis Now and Then picture" />
+              </div>
+
+              <div class="tile-news">
+                <h4 class="news-heading" aria-label="Thesis title">
+                  Now and then
+                </h4>
+                <p class="news-text" aria-label="Thesis subject">
+                  Research study about New York
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+      <footer class="siteContent-footer">
+      <!-- The footer has two parts:
+      a copyright mention and a nav -->
+
+        <div class="footer-copyright">
+          <h6 class="copyright-heading">
+            <!-- Using of the font awesome copyright icon -->
+            <i class="fa fa-copyright"></i>
+            &nbsp;2016 Colmar Academy. All rights reserved
+          </h6>
+        </div>
+
+        <nav class="footer-nav">
+          <ul class="nav-menu" role="presentation">
+          <!-- Using of the ARIA role attribute with a presentation value.
+          It will able the screen reader to go directly to the content list -->
+            <li class="menu-item">
+              <a href="#">Terms</a>
+            </li>
+            <li class="menu-item">
+              <a href="#">Privacy</a>
+            </li>
+          </ul>
+        </nav>
+
+      </footer>
+
+      </div>
+
+      </body>
+
+      </html>
